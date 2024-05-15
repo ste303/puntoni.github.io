@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+	<title>Puntoni Stameat</title>
+</head>
+<!-- TITOLO -->
+
+<body>
+	<section class="hero">
+		<div class="hero-body">
+			<h1 class="title is-size-4"><center> Stameat s.r.l. - Puntoni</center></h1>
+		</div>
+	</section>
+
+<!-- DATI GENERALI -->
+<section class="section">	
+	<button class="button is-primary" id="calcola">Calcola</button>
+	<button class="button is-info" id="help" >Help</button>
+	<button class="button is-info" id="doc" >Info</button>
+</section>
+
+	<section class="section">
+			<div class="columns">
+				<div class="column is-one-half">
+					<div class="notification is-warning is-light">
+						<p class="title is-size-4 is-spaced">Dati</p>
+						<div class="field">
+							<label class="label">Sporgenza [ mm ]</label>
+							<input class="input" id="length" type="text" maxlength="4" style="width: 240px;">
+						</div>
+
+						<div class="field">
+							<label class="label">Interasse [ mm ]</label>
+							<input class="input" id="spacing" type="text"  style="width: 240px;">
+						</div>
+
+						<div class="field">
+							<label class="label">Carico [ kPa ]</label>
+							<input class="input" id="load" type="text" style="width: 240px;">
+						</div>
+
+						<div class="field">
+							<label class="label">Freccia limite [ mm ]</label>
+							<div class="select" type="text">
+								<select id="select">
+									<option value="200">L/200</option>
+									<option value="150">L/150</option>
+									<option value="300">L/300</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+
+<!-- PROPRIETA' PUNTONE -->
+					<div class="notification">
+						<p class="title is-size-4 is-spaced">Proprietà Puntone</p>
+						<div class="level">
+							<div class="level-left">
+								<div class="level-item">
+									<div class="field">
+										<label class="label">Ix [ cm^4 ]</label>
+										<input class="input" id="momentOfInertia" type="text" style="width: 120px;">
+									</div>
+								</div>
+							</div>
+							<div class="level-item">
+								<div class="field">
+									<label class="label">Wx [ cm^3 ]</label>
+									<input class="input" id="modulus" type="text" style="width: 120px;">
+								</div>
+							</div>
+						</div>
+					</div>
+
+<!-- PROPRIETA' RINFORZO -->
+					<div class="notification">
+						<p class="title is-size-4 is-spaced">Proprietà Rinforzo</p>
+						<div class="field">
+							<label class="label">materiale</label>
+							<div class="select" type="text">
+								<select id="mat_rinforzo">
+									<option value="alu-6060T6-140-170">Alu 6060-T6</option>
+									<option value="steel-S235-235-360">Acciaio S235</option>
+									<!-- <option value="steel-S275-275-430">Acciaio S275</option> -->
+									<option value="steel-S355-355-510">Acciaio S355</option>
+								</select>
+							</div>
+						</div>
+					
+					
+						
+						<div class="level">
+							<div class="level-left">
+								<div class="level-item">
+									<div class="field">
+										<label class="label">Ix [ cm^4 ]</label>
+										<input class="input" id="I_reinforce" type="text" style="width: 120px;">
+									</div>
+								</div>
+							</div>
+							<div class="level-item">
+								<div class="field">
+									<label class="label">Wx [ cm^3 ]</label>
+									<input class="input" id="W_reinforce" type="text" style="width: 120px;">
+								</div>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+<!-- COLONNA DESTRA -->
+				<div class="column is one-third">
+				
+
+					<!-- PROPRIETA' DEL -->
+					<div class="card">
+						<!-- <header class="card-header">
+						  <p class="card-header-title">Puntone</p>
+						  <button class="card-header-icon" aria-label="more options">
+							<span class="icon">
+							  <i class="fas fa-angle-down" aria-hidden="true"></i>
+							</span>
+						  </button> -->
+						<!-- </header> -->
+						<div class="card-image is-5by3 is-128x128">
+							<center><img src="./matrice.png" alt="Placeholder image"/></center>
+						</div>
+						<div class="card-content">
+						  <div class="content">
+							Area: 14.12 cm^2	<br />
+							Peso: 3.8 kg/m  <br />
+							Ix: 297.3 cm^4	<br />
+							Wx:	44.9 cm^3	<br />
+							
+						  </div>
+						</div>
+						
+					  </div>
+<!-- OUTPUT -->
+					<div class="notification">
+						<h4 class="title is-size-4">Output</h4>
+
+						<p><span id="report"></span></p>
+					</div>
+				</div>
+			</div>
+		<!-- </div> -->
+
+	<!-- TESTO IN CALCE -->
+			<footer class="footer">
+				<div class="content has-text-centered">
+					<p>
+						<strong>puntoni.app</strong> by <a href="http://cappellereng.com/">Cappeller Engineering</a>.
+						The source code is licensed
+						<a href="http://opensource.org/licenses/mit-license.php">MIT. </a>
+						Release date<time datetime="15-05-2024">11:09 PM - 15 Maggio 2024</time>
+					</p>
+				</div>
+			</footer>
+		
+		<script src=".\src\main.js"></script>
+</body>
+
+</html>
